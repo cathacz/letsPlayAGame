@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Lobster", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: coral;
+  display: flex;
+  font-family: "Lobster";
+  justify-content: center;
+  background-color: peachpuff;
+}
+
+.container {
+  background: lightsalmon;
+  margin: 2.5rem;
+  padding: 2.5rem;
+  /* border-radius: 25px; */
+}
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.title span {
+  color: peachpuff;
+}
+
+.status-action {
+  display: flex;
+  margin-top: 25px;
+  font-size: 25px;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.status span {
+  color: peachpuff;
+}
+
+.reset {
+  cursor: pointer;
+}
+
+.reset:hover {
+  color: peachpuff;
+}
+
+.game-grid {
+  background: lightcoral;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+}
+
+.game-cell {
+  background: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+}
+
+.x,
+.o {
+  cursor: default;
+}
+
+.x::after {
+  content: "×";
+  font-size: 200px;
+}
+
+.o::after {
+  content: "○";
+  color: peachpuff;
+  font-size: 225px;
+}
+
+.won::after {
+  color: lightcoral;
+}
+
+@media only screen and (max-width: 1024px) {
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+
+  .game-cell {
+    height: 150px;
+    width: 150px;
+  }
+
+  .x::after {
+    font-size: 150px;
+  }
+
+  .o::after {
+    font-size: 175px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .x::after {
+    font-size: 100px;
+  }
+
+  .o::after {
+    font-size: 125px;
+  }
+}
